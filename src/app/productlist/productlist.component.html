@@ -1,0 +1,20 @@
+
+
+
+
+      <a>Product list:</a>
+      <input type="text" placeholder="Filter on product name" style="border: black double" [(ngModel)]="find">
+
+    <span *ngIf = "elSelection?.name != null">
+     <a>You have select: {{elSelection?.name}}</a>
+    <button (click)="productService.rmv(elSelection)">delete</button>
+    </span>
+
+<ul >
+    <li *ngFor="let elem of filter()">
+      <article app-product (outputVar)="getValue($event)" [elProduit]=elem></article>
+    </li>
+  </ul>
+
+
+

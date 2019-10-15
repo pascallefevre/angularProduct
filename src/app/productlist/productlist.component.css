@@ -1,0 +1,11 @@
+:host{
+  margin-right: auto;
+  margin-left: auto;
+
+}
+span{
+  border: 1px;
+  background-color: darksalmon;
+  padding: 3px;
+}
+

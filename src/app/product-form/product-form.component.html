@@ -1,0 +1,13 @@
+<pre>{{product | json}}</pre>
+<form (ngSubmit)="calladd(monForm)" #monForm = "ngForm">
+  <input type="text" [(ngModel)]="product.supplier" name="pSupplier" placeholder="supplier">
+  <input type="text" [(ngModel)]="product.name" #inputName="ngModel" name="pName" placeholder="name" required minlength="4"  >
+  <input type="text" [(ngModel)]="product.description" name="pDescription" placeholder="description">
+  <input type="text" [(ngModel)]="product.price" name="pPrice" placeholder="price">
+  <button type="submit" [disabled]="!monForm.valid">Add Product</button>
+
+</form>
+<div *ngIf="!monForm.valid && formSubmitted" style="border: 1px solid black; background-color: lightcoral;">
+  <span *ngIf="inputName.errors?.required">Input error</span>
+  <span *ngIf="inputName.errors?.minlength">to short</span>
+ </div>

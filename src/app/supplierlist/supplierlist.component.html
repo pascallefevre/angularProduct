@@ -1,0 +1,10 @@
+<section>
+
+    <h4>Supplier list:</h4>
+  <span *ngIf = "elSup?.compagnyName != null">You have select: {{elSup?.compagnyName}}</span>
+
+
+  <ul>
+    <li *ngFor="let elem of sl"> <article app-supplier (outputVar)="getValue($event)" [elSup]=elem></article></li>
+  </ul>
+</section>

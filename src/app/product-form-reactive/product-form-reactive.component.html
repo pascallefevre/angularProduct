@@ -1,0 +1,14 @@
+
+<form [formGroup]="formAdd" (ngSubmit)="calladd()">
+
+  <input type="text" formControlName="supplier" placeholder="supplier"/>
+  <input type="text" formControlName="name" placeholder="name"/>
+  <input type="text" formControlName="description" placeholder="description"/>
+  <input type="text" formControlName="price" placeholder="price"/>
+  <div formGroupName="truc">
+    <input type="text" formControlName="id"/>
+    <input type="text" formControlName="color"/>
+  </div>>
+  <button type="submit">Send</button>
+
+</form>

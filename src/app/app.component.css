@@ -1,0 +1,24 @@
+:host{
+  font-family: "Baskerville Old Face";
+border:black dotted;
+display: block;
+  position:center  ;
+ width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+/*.content{
+
+  background-image:url(\IMG\birke.png) ;
+  height: 100%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+{
+  border: darkgreen dashed;
+}*/
+
