@@ -1,11 +1,12 @@
 
 <section class="content" >
 <h1>Apple Store</h1>
-<section>
+
   <a>Hello {{firstname}} !</a>
   <button (mousedown)="changeFirstName()" (mouseup)="rechangeFirstName()"><a style="color: darkred">True Identity</a></button>
 
   <app-menu></app-menu>
+
   <select  [(ngModel)]="testVar">
     <option selected value="white">White</option>
     <option value="darkred">Red</option>
@@ -13,13 +14,6 @@
     <option value="darkblue">Blue</option>
   </select>
   <a [style.color]="testVar" > Color changing amazing text!</a>
-</section>
-  <hr>
- <!-- <section app-product-form></section>-->
-  <section app-product-form-reactive></section>
-  <hr>
-<section>
-  <section app-productlist></section> <hr>
-  <section app-supplierlist></section>
-</section>
-</section>
+
+  <router-outlet></router-outlet>
+  </section>

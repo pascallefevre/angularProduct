@@ -3,7 +3,7 @@ import {Product} from './Product';
 
 
 export class Client extends Person {
-    constructor(firstName, lastName, age, private _ca : number, private _productList : Array<Product>)
+    constructor(firstName?, lastName?, age?, private _ca ?: number, private _productList ?: Array<Product>)
     {
         super( firstName, lastName, age);
     }

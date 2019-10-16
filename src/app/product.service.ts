@@ -15,21 +15,21 @@ export class ProductService {
 private products = this.lp
   constructor() { }
     findAll(): Promise<Product[]>{
-    return new Promise((resolve => resolve(this.products)));
+    return new Promise((resolve => resolve(this.lp)));
 }
 
     add(product:Product): Promise<boolean>{
-      this.products.push(product);
+      this.lp.push(product);
       return new Promise( r=>r(true));
       }
 
      rmv(product:Product): Promise<boolean>{
-    this.products.splice(this.products.indexOf(product),1);
+    this.lp.splice(this.products.indexOf(product),1);
     return new Promise( r=>r(true));
       }
 
     getOne(name: string): Promise<Product>{
-      return new Promise (resolve =>resolve(this.products.filter( s => s.name===name)[0]));
+      return new Promise (resolve =>resolve(this.lp.filter( s => s.name===name)[0]));
       }
 
     /*getProdByName(name: string): Promise<Product>{

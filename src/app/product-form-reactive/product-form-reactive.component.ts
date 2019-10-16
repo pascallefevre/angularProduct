@@ -3,6 +3,8 @@ import {Product} from "../domaine/Product";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {ProductService} from "../product.service";
 import {ProductlistComponent} from "../productlist/productlist.component";
+import {JsonplaceholderService} from "../jsonplaceholder.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: '[app-product-form-reactive]',
@@ -13,10 +15,9 @@ export class ProductFormReactiveComponent implements OnInit {
 
   product=new Product();
   formAdd:FormGroup;
-  productService  = new ProductService();
   productlisteComponent = new ProductlistComponent(this.productService);
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private productService: ProductService, private service: JsonplaceholderService , private router: Router ) {
 
 
 
@@ -29,12 +30,13 @@ export class ProductFormReactiveComponent implements OnInit {
     supplier: this.product.supplier,
     name: this.product.name,
     description: this.product.description,
-    price: this.product.price,
-    truc: fb.group({
+    price: this.product.price
+    /*truc: fb.group({
       id:10,
       color:'green'
-    })
+    })*/
   })
+
 }
     calladd()
     {
@@ -43,12 +45,15 @@ export class ProductFormReactiveComponent implements OnInit {
         console.log("submitted")
         this.productService.add(this.formAdd.value).then
           (
-              () => { console.log(this.productlisteComponent.lp) }
+              /*() => { console.log(this.productlisteComponent.lp)}*/
+            () => { this.router.navigate(['/products']) }
           );
+
         }
     }
 
 
   ngOnInit() {
+    this.service.getAll().then(res=> console.log(res))
   }
 }
